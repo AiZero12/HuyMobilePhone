@@ -1,0 +1,2338 @@
+/* =====================================================
+   HuyMobilePhone
+   STYLE.CSS
+   Phiên bản hoàn chỉnh
+===================================================== */
+
+
+/* =====================================================
+   1. BIẾN MÀU & CẤU HÌNH CHUNG
+===================================================== */
+
+:root {
+    --primary-color: #087eff;
+    --primary-dark: #0056c7;
+
+    --dark-color: #071426;
+    --dark-blue: #0b1b33;
+
+    --background-color: #f5f7fb;
+    --white-color: #ffffff;
+
+    --text-color: #172033;
+    --gray-color: #667085;
+
+    --danger-color: #d70018;
+    --success-color: #198754;
+    --warning-color: #ffc107;
+
+    --border-color: #e4e7ec;
+
+    --shadow-small: 0 4px 18px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.10);
+    --shadow-large: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =====================================================
+   2. RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   3. NAVBAR
+===================================================== */
+
+.navbar {
+    min-height: 75px;
+
+    box-shadow:
+        0 3px 15px rgba(0, 0, 0, 0.20);
+
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.logo {
+    width: 95px;
+    height: 65px;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.08);
+}
+
+
+/* Search */
+
+.search-box {
+    display: flex;
+
+    flex: 1;
+
+    max-width: 520px;
+}
+
+.search-box .form-control {
+    height: 43px;
+
+    border: 1px solid #dee2e6;
+
+    border-radius:
+        8px 0 0 8px;
+
+    padding-left: 16px;
+
+    box-shadow: none;
+}
+
+.search-box .form-control:focus {
+    border-color: var(--primary-color);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(8, 126, 255, 0.15);
+}
+
+.search-box .btn {
+    width: 50px;
+
+    border-radius:
+        0 8px 8px 0;
+}
+
+
+/* Navigation */
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+
+    font-weight: 500;
+
+    padding:
+        10px 12px;
+
+    transition:
+        color 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #ffffff;
+}
+
+
+/* Cart */
+
+#cartButton {
+    position: relative;
+
+    white-space: nowrap;
+}
+
+#cartCount {
+    margin-left: 4px;
+}
+
+
+/* =====================================================
+   4. BANNER
+===================================================== */
+
+.banner-section {
+    background: #000000;
+}
+
+
+/* Hình banner */
+
+.banner-image {
+    width: 100%;
+
+    height:
+        min(520px, 42vw);
+
+    min-height: 250px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Chuyển slide */
+
+.banner-section .carousel-item {
+    transition:
+        transform 0.8s ease-in-out;
+}
+
+.banner-section .carousel-inner {
+    overflow: hidden;
+}
+
+
+/* Nút Previous / Next */
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 7%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 45px;
+    height: 45px;
+
+    background-color:
+        rgba(0, 0, 0, 0.45);
+
+    background-size: 50%;
+
+    border-radius: 50%;
+}
+
+
+/* Indicators */
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    border: 0;
+
+    margin: 0 5px;
+
+    transition:
+        all 0.3s ease;
+}
+
+.carousel-indicators .active {
+    width: 30px;
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   5. HIỆU ỨNG BANNER
+===================================================== */
+
+.banner-section
+.carousel-item.active
+.banner-image {
+
+    animation:
+        bannerZoom 4s ease-in-out;
+}
+
+@keyframes bannerZoom {
+
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.03);
+    }
+}
+
+
+/* =====================================================
+   6. TIÊU ĐỀ SECTION
+===================================================== */
+
+.section-label {
+    display: inline-block;
+
+    color: var(--primary-color);
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+}
+
+.brand-section h2,
+.products-section h2 {
+    font-weight: 800;
+
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   7. THƯƠNG HIỆU
+===================================================== */
+
+.brand-section {
+    background:
+        var(--white-color);
+}
+
+.brand-card {
+    width: 100%;
+    height: 105px;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 15px;
+
+    background:
+        var(--white-color);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: var(--text-color);
+
+    cursor: pointer;
+
+    transition:
+        all 0.25s ease;
+}
+
+.brand-card:hover {
+
+    border-color:
+        var(--primary-color);
+
+    color:
+        var(--primary-color);
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(8, 126, 255, 0.12);
+}
+
+.brand-card i {
+    font-size: 32px;
+}
+
+.brand-card strong {
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+
+/* Xiaomi */
+
+.xiaomi-icon {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 7px;
+
+    background:
+        #ff6900;
+
+    color:
+        #ffffff;
+
+    font-size: 19px;
+
+    font-weight: bold;
+}
+
+
+/* OPPO */
+
+.oppo-text {
+    color:
+        #159447;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   8. KHU VỰC SẢN PHẨM
+===================================================== */
+
+.products-section {
+    background:
+        var(--background-color);
+}
+
+
+/* Bộ lọc / sắp xếp */
+
+.sort-select {
+    width: 230px;
+    height: 42px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.sort-select:focus {
+
+    border-color:
+        var(--primary-color);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(8, 126, 255, 0.12);
+}
+
+
+/* =====================================================
+   9. PRODUCT CARD
+===================================================== */
+
+.product-card {
+
+    height: 100%;
+
+    background:
+        var(--white-color);
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition:
+        all 0.3s ease;
+
+    animation:
+        fadeIn 0.4s ease;
+}
+
+.product-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        var(--shadow-large);
+}
+
+
+/* Product image */
+
+.product-image {
+
+    height: 270px;
+
+    padding: 20px;
+
+    background:
+        #f8f9fb;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.product-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.product-card:hover
+.product-image img {
+
+    transform:
+        scale(1.06);
+}
+
+
+/* Product information */
+
+.product-info {
+    padding: 18px;
+}
+
+.product-brand {
+
+    color:
+        var(--gray-color);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 7px;
+}
+
+.product-name {
+
+    min-height: 48px;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    margin-bottom: 12px;
+}
+
+
+/* Price */
+
+.product-price {
+
+    color:
+        var(--danger-color);
+
+    font-size: 19px;
+
+    font-weight: 800;
+}
+
+.product-old-price {
+
+    color:
+        #98a2b3;
+
+    font-size: 13px;
+
+    text-decoration:
+        line-through;
+
+    margin-left: 5px;
+}
+
+
+/* Buy button */
+
+.buy-button {
+
+    width: 100%;
+
+    margin-top: 15px;
+
+    height: 42px;
+
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    transition:
+        all 0.2s ease;
+}
+
+.buy-button:hover {
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =====================================================
+   10. KHUYẾN MÃI
+===================================================== */
+
+.promotion-section {
+    background:
+        var(--white-color);
+}
+
+.promotion-box {
+
+    min-height: 210px;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    background:
+
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(255, 255, 255, 0.15),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #0056c7,
+            #087eff
+        );
+
+    color:
+        #ffffff;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap: 30px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 15px 35px
+        rgba(8, 126, 255, 0.20);
+}
+
+.promotion-label {
+
+    display: inline-block;
+
+    background:
+        #ffc107;
+
+    color:
+        #212529;
+
+    padding:
+        6px 10px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    margin-bottom: 12px;
+}
+
+.promotion-box h2 {
+
+    font-size: 32px;
+
+    font-weight: 800;
+
+    margin-bottom: 8px;
+}
+
+.promotion-box p {
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.85);
+}
+
+.promotion-box .btn {
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   11. FOOTER
+===================================================== */
+
+.footer-section {
+
+    background:
+        var(--dark-color);
+
+    color:
+        #adb5bd;
+}
+
+.footer-logo {
+
+    width: 110px;
+    height: 75px;
+
+    object-fit:
+        contain;
+}
+
+.footer-section h5 {
+
+    color:
+        #ffffff;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        18px;
+}
+
+.footer-section a {
+
+    display: block;
+
+    color:
+        #adb5bd;
+
+    text-decoration:
+        none;
+
+    margin-bottom:
+        10px;
+
+    transition:
+        color 0.2s ease;
+}
+
+.footer-section a:hover {
+
+    color:
+        #ffffff;
+}
+
+.footer-section hr {
+
+    border-color:
+        rgba(255, 255, 255, 0.15);
+}
+
+
+/* =====================================================
+   12. GIỎ HÀNG
+===================================================== */
+
+#cartItems {
+
+    max-height:
+        400px;
+
+    overflow-y:
+        auto;
+}
+
+.cart-product {
+
+    display: flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap: 15px;
+
+    padding:
+        12px 0;
+
+    border-bottom:
+        1px solid
+        var(--border-color);
+}
+
+.cart-product:last-child {
+
+    border-bottom:
+        none;
+}
+
+.cart-product-image {
+
+    width: 60px;
+    height: 60px;
+
+    object-fit:
+        contain;
+
+    background:
+        #f8f9fb;
+
+    border-radius:
+        8px;
+}
+
+.cart-product-info {
+
+    flex: 1;
+}
+
+.cart-product-name {
+
+    font-weight:
+        700;
+
+    font-size:
+        14px;
+}
+
+.cart-product-price {
+
+    color:
+        var(--danger-color);
+
+    font-size:
+        13px;
+
+    margin-top:
+        3px;
+}
+
+
+/* Quantity */
+
+.quantity-control {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+}
+
+.quantity-control button {
+
+    width:
+        28px;
+
+    height:
+        28px;
+
+    padding:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+}
+
+
+/* =====================================================
+   13. MODAL
+===================================================== */
+
+.modal-content {
+
+    border:
+        none;
+
+    border-radius:
+        15px;
+
+    overflow:
+        hidden;
+}
+
+.modal-header {
+
+    background:
+        var(--dark-color);
+
+    color:
+        #ffffff;
+}
+
+.modal-header .btn-close {
+
+    filter:
+        invert(1);
+}
+
+
+/* =====================================================
+   14. HIỆU ỨNG CHUNG
+===================================================== */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(10px);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   15. TRANG ĐĂNG NHẬP
+===================================================== */
+
+.login-page {
+
+    min-height:
+        100vh;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #071426 0%,
+            #0b1b33 50%,
+            #087eff 100%
+        );
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    position:
+        relative;
+
+    padding:
+        30px 15px;
+}
+
+
+/* Back home */
+
+.back-home {
+
+    position:
+        fixed;
+
+    top:
+        25px;
+
+    left:
+        30px;
+
+    color:
+        #ffffff;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        600;
+
+    transition:
+        0.2s ease;
+}
+
+.back-home:hover {
+
+    color:
+        #8bc4ff;
+
+    transform:
+        translateX(-3px);
+}
+
+
+/* Login container */
+
+.login-container {
+
+    width:
+        100%;
+
+    max-width:
+        440px;
+}
+
+
+/* Login card */
+
+.login-card {
+
+    background:
+        #ffffff;
+
+    border-radius:
+        20px;
+
+    padding:
+        35px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.25);
+
+    animation:
+        loginFade 0.5s ease;
+}
+
+
+/* Login logo */
+
+.login-logo {
+
+    text-align:
+        center;
+
+    margin-bottom:
+        15px;
+}
+
+.login-logo img {
+
+    width:
+        120px;
+
+    height:
+        80px;
+
+    object-fit:
+        contain;
+}
+
+
+/* Login title */
+
+.login-card h2 {
+
+    font-weight:
+        800;
+
+    color:
+        #071426;
+
+    margin-bottom:
+        8px;
+}
+
+.login-card p {
+
+    color:
+        #667085;
+
+    margin-bottom:
+        0;
+}
+
+
+/* Labels */
+
+.login-card .form-label {
+
+    font-weight:
+        600;
+
+    color:
+        #344054;
+}
+
+
+/* Input */
+
+.login-card .input-group-text {
+
+    background:
+        #f8f9fb;
+
+    border-color:
+        #dee2e6;
+}
+
+.login-card .form-control {
+
+    height:
+        46px;
+}
+
+.login-card .form-control:focus {
+
+    border-color:
+        #087eff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(8, 126, 255, 0.12);
+}
+
+
+/* Forgot password */
+
+#forgotPassword {
+
+    color:
+        #087eff;
+
+    text-decoration:
+        none;
+
+    font-size:
+        14px;
+
+    font-weight:
+        600;
+}
+
+#forgotPassword:hover {
+
+    text-decoration:
+        underline;
+}
+
+
+/* Login button */
+
+.login-button {
+
+    height:
+        48px;
+
+    border-radius:
+        9px;
+
+    font-weight:
+        700;
+
+    font-size:
+        16px;
+}
+
+
+/* Register */
+
+.register-text {
+
+    text-align:
+        center;
+
+    margin-top:
+        25px;
+
+    color:
+        #667085;
+
+    font-size:
+        14px;
+}
+
+.register-text a {
+
+    color:
+        #087eff;
+
+    font-weight:
+        700;
+
+    text-decoration:
+        none;
+}
+
+.register-text a:hover {
+
+    text-decoration:
+        underline;
+}
+
+
+/* Demo account */
+
+.demo-account {
+
+    margin-top:
+        25px;
+
+    padding:
+        14px;
+
+    border-radius:
+        10px;
+
+    background:
+        #f0f7ff;
+
+    border:
+        1px solid
+        #cfe5ff;
+
+    color:
+        #475467;
+
+    font-size:
+        13px;
+
+    line-height:
+        1.8;
+}
+
+.demo-title {
+
+    color:
+        #087eff;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        3px;
+}
+
+
+/* Login animation */
+
+@keyframes loginFade {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(20px);
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =====================================================
+   16. TRANG TÀI KHOẢN
+===================================================== */
+
+.account-page {
+
+    min-height:
+        100vh;
+
+    background:
+        #f5f7fb;
+
+    color:
+        #172033;
+}
+
+
+/* Account navbar */
+
+.account-navbar {
+
+    box-shadow:
+        0 2px 10px
+        rgba(0, 0, 0, 0.08);
+}
+
+.account-navbar .navbar-brand {
+
+    font-size:
+        1.15rem;
+}
+
+.account-navbar .btn {
+
+    border-radius:
+        8px;
+
+    font-weight:
+        500;
+}
+
+
+/* Container */
+
+.account-container {
+
+    max-width:
+        1000px;
+
+    padding-top:
+        40px;
+
+    padding-bottom:
+        50px;
+}
+
+
+/* Title */
+
+.account-title {
+
+    margin-bottom:
+        25px;
+}
+
+.account-title h2 {
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        6px;
+}
+
+.account-title h2 i {
+
+    color:
+        #0d6efd;
+
+    margin-right:
+        8px;
+}
+
+.account-title p {
+
+    color:
+        #6c757d;
+
+    margin:
+        0;
+}
+
+
+/* =====================================================
+   17. PROFILE
+===================================================== */
+
+.account-profile-card {
+
+    background:
+        #ffffff;
+
+    border-radius:
+        16px;
+
+    padding:
+        24px;
+
+    margin-bottom:
+        25px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        20px;
+
+    box-shadow:
+        0 4px 18px
+        rgba(0, 0, 0, 0.06);
+
+    border:
+        1px solid
+        #e9ecef;
+}
+
+
+/* Avatar */
+
+.account-avatar {
+
+    width:
+        82px;
+
+    height:
+        82px;
+
+    min-width:
+        82px;
+
+    border-radius:
+        50%;
+
+    overflow:
+        hidden;
+
+    border:
+        4px solid
+        #e8f1ff;
+
+    background:
+        #f1f5f9;
+}
+
+.account-avatar img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+}
+
+
+/* Profile information */
+
+.account-profile-info h4 {
+
+    margin:
+        0 0 5px;
+
+    font-weight:
+        700;
+}
+
+.account-profile-info p {
+
+    margin:
+        0;
+
+    color:
+        #6c757d;
+}
+
+
+/* =====================================================
+   18. ACCOUNT MESSAGE
+===================================================== */
+
+.account-message {
+
+    margin-bottom:
+        20px;
+}
+
+.account-message:empty {
+
+    display:
+        none;
+}
+
+.account-message .alert {
+
+    border-radius:
+        10px;
+
+    margin-bottom:
+        0;
+}
+
+
+/* =====================================================
+   19. ACCOUNT CARD
+===================================================== */
+
+.account-card {
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid
+        #e5e7eb;
+
+    border-radius:
+        16px;
+
+    margin-bottom:
+        24px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        0 4px 18px
+        rgba(0, 0, 0, 0.05);
+}
+
+
+/* Header */
+
+.account-card-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    padding:
+        20px 24px;
+
+    background:
+        #fafbfc;
+
+    border-bottom:
+        1px solid
+        #edf0f2;
+}
+
+
+/* Section icon */
+
+.account-section-icon {
+
+    width:
+        42px;
+
+    height:
+        42px;
+
+    min-width:
+        42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        10px;
+
+    background:
+        #eaf2ff;
+
+    color:
+        #0d6efd;
+
+    font-size:
+        20px;
+}
+
+.account-card-header h5 {
+
+    margin:
+        0 0 3px;
+
+    font-weight:
+        700;
+}
+
+.account-card-header p {
+
+    margin:
+        0;
+
+    font-size:
+        0.85rem;
+
+    color:
+        #6c757d;
+}
+
+
+/* Body */
+
+.account-card-body {
+
+    padding:
+        25px 24px;
+}
+
+
+/* =====================================================
+   20. FORM TÀI KHOẢN
+===================================================== */
+
+.account-card .form-label {
+
+    font-weight:
+        600;
+
+    color:
+        #343a40;
+
+    margin-bottom:
+        8px;
+}
+
+.account-input {
+
+    position:
+        relative;
+}
+
+.account-input > i {
+
+    position:
+        absolute;
+
+    left:
+        14px;
+
+    top:
+        50%;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        #6c757d;
+
+    z-index:
+        2;
+}
+
+.account-input .form-control {
+
+    min-height:
+        46px;
+
+    padding-left:
+        42px;
+
+    border:
+        1px solid
+        #dfe3e8;
+
+    border-radius:
+        9px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.account-input .form-control:focus {
+
+    border-color:
+        #0d6efd;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(13, 110, 253, 0.12);
+}
+
+.account-input .form-control[readonly] {
+
+    background:
+        #f4f6f8;
+
+    color:
+        #6c757d;
+
+    cursor:
+        not-allowed;
+}
+
+
+/* Hint */
+
+.form-hint {
+
+    margin-top:
+        6px;
+
+    font-size:
+        0.78rem;
+
+    color:
+        #6c757d;
+}
+
+.form-hint i {
+
+    margin-right:
+        3px;
+}
+
+
+/* =====================================================
+   21. GIỚI TÍNH
+===================================================== */
+
+.gender-options {
+
+    display:
+        flex;
+
+    gap:
+        12px;
+}
+
+.gender-option {
+
+    flex:
+        1;
+
+    cursor:
+        pointer;
+}
+
+.gender-option input {
+
+    display:
+        none;
+}
+
+.gender-option span {
+
+    min-height:
+        46px;
+
+    border:
+        1px solid
+        #dfe3e8;
+
+    border-radius:
+        9px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        #495057;
+
+    transition:
+        all 0.2s ease;
+}
+
+.gender-option span:hover {
+
+    border-color:
+        #86b7fe;
+
+    background:
+        #f8fbff;
+}
+
+.gender-option input:checked + span {
+
+    border-color:
+        #0d6efd;
+
+    background:
+        #eaf2ff;
+
+    color:
+        #0d6efd;
+
+    font-weight:
+        600;
+}
+
+
+/* =====================================================
+   22. MẬT KHẨU
+===================================================== */
+
+.password-note {
+
+    background:
+        #f0f6ff;
+
+    color:
+        #52616f;
+
+    border-radius:
+        9px;
+
+    padding:
+        12px 15px;
+
+    margin-bottom:
+        22px;
+
+    font-size:
+        0.9rem;
+}
+
+.password-note i {
+
+    color:
+        #0d6efd;
+
+    margin-right:
+        5px;
+}
+
+
+/* =====================================================
+   23. BUTTON ACCOUNT
+===================================================== */
+
+.account-actions {
+
+    display:
+        flex;
+
+    justify-content:
+        flex-end;
+
+    gap:
+        12px;
+
+    margin-top:
+        5px;
+}
+
+.account-actions .btn {
+
+    min-height:
+        46px;
+
+    padding:
+        10px 22px;
+
+    border-radius:
+        9px;
+
+    font-weight:
+        600;
+}
+
+.account-cancel {
+
+    border:
+        1px solid
+        #dee2e6;
+}
+
+.account-submit {
+
+    min-width:
+        170px;
+
+    box-shadow:
+        0 4px 10px
+        rgba(13, 110, 253, 0.20);
+}
+
+.account-submit:hover {
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =====================================================
+   24. ACCOUNT FOOTER
+===================================================== */
+
+.account-footer {
+
+    background:
+        #ffffff;
+
+    border-top:
+        1px solid
+        #e9ecef;
+
+    padding:
+        20px 0;
+
+    text-align:
+        center;
+
+    color:
+        #6c757d;
+
+    font-size:
+        0.85rem;
+}
+
+.account-footer p {
+
+    margin:
+        0;
+}
+
+
+/* =====================================================
+   25. RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .navbar {
+
+        padding:
+            8px 0;
+    }
+
+    .search-box {
+
+        max-width:
+            none;
+
+        margin:
+            15px 0;
+    }
+
+    .navbar-nav {
+
+        padding-bottom:
+            10px;
+    }
+
+    .navbar .nav-link {
+
+        padding:
+            10px 0;
+    }
+
+    .banner-image {
+
+        height:
+            45vw;
+    }
+
+    .promotion-box {
+
+        padding:
+            30px;
+    }
+}
+
+
+/* =====================================================
+   26. RESPONSIVE - MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+    /* Navbar */
+
+    .logo {
+
+        width:
+            80px;
+
+        height:
+            55px;
+    }
+
+
+    /* Banner */
+
+    .banner-image {
+
+        height:
+            55vw;
+
+        min-height:
+            190px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+
+        width:
+            35px;
+
+        height:
+            35px;
+    }
+
+
+    /* Brand */
+
+    .brand-card {
+
+        height:
+            90px;
+
+        font-size:
+            17px;
+    }
+
+    .brand-card i {
+
+        font-size:
+            27px;
+    }
+
+
+    /* Product */
+
+    .product-image {
+
+        height:
+            220px;
+
+        padding:
+            15px;
+    }
+
+    .product-info {
+
+        padding:
+            14px;
+    }
+
+    .product-name {
+
+        font-size:
+            16px;
+    }
+
+    .product-price {
+
+        font-size:
+            16px;
+    }
+
+    .product-old-price {
+
+        display:
+            block;
+
+        margin-left:
+            0;
+
+        margin-top:
+            3px;
+    }
+
+
+    /* Promotion */
+
+    .promotion-box {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        padding:
+            30px 25px;
+    }
+
+    .promotion-box h2 {
+
+        font-size:
+            26px;
+    }
+
+
+    /* Account */
+
+    .account-container {
+
+        padding-top:
+            25px;
+
+        padding-bottom:
+            35px;
+
+        padding-left:
+            14px;
+
+        padding-right:
+            14px;
+    }
+
+    .account-title h2 {
+
+        font-size:
+            1.5rem;
+    }
+
+    .account-profile-card {
+
+        padding:
+            18px;
+    }
+
+    .account-avatar {
+
+        width:
+            65px;
+
+        height:
+            65px;
+
+        min-width:
+            65px;
+    }
+
+    .account-profile-info h4 {
+
+        font-size:
+            1.05rem;
+    }
+
+    .account-card-header {
+
+        padding:
+            17px;
+    }
+
+    .account-card-body {
+
+        padding:
+            20px 17px;
+    }
+
+    .account-actions {
+
+        flex-direction:
+            column-reverse;
+    }
+
+    .account-actions .btn {
+
+        width:
+            100%;
+    }
+
+
+    /* Login */
+
+    .login-card {
+
+        padding:
+            25px 20px;
+    }
+
+    .back-home {
+
+        top:
+            15px;
+
+        left:
+            15px;
+
+        font-size:
+            14px;
+    }
+}
+
+
+/* =====================================================
+   27. RESPONSIVE - ĐIỆN THOẠI NHỎ
+===================================================== */
+
+@media (max-width: 575px) {
+
+    .section-label {
+
+        font-size:
+            11px;
+    }
+
+    .brand-section h2,
+    .products-section h2 {
+
+        font-size:
+            25px;
+    }
+
+    .sort-select {
+
+        width:
+            100%;
+    }
+
+    .product-image {
+
+        height:
+            180px;
+    }
+
+    .product-info {
+
+        padding:
+            12px;
+    }
+
+    .product-name {
+
+        min-height:
+            44px;
+
+        font-size:
+            14px;
+    }
+
+    .buy-button {
+
+        font-size:
+            13px;
+    }
+
+    .promotion-box {
+
+        border-radius:
+            14px;
+    }
+}
+
+
+/* =====================================================
+   28. ĐIỆN THOẠI CỰC NHỎ
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .account-navbar .container {
+
+        padding-left:
+            12px;
+
+        padding-right:
+            12px;
+    }
+
+    .account-navbar .navbar-brand {
+
+        font-size:
+            1rem;
+    }
+
+    .account-profile-card {
+
+        gap:
+            14px;
+    }
+
+    .gender-options {
+
+        gap:
+            8px;
+    }
+}
+
+
+/* =====================================================
+   29. CUỘN THANH GIỎ HÀNG ĐẸP HƠN
+===================================================== */
+
+#cartItems::-webkit-scrollbar {
+
+    width:
+        6px;
+}
+
+#cartItems::-webkit-scrollbar-track {
+
+    background:
+        #f1f1f1;
+}
+
+#cartItems::-webkit-scrollbar-thumb {
+
+    background:
+        #b8c2cc;
+
+    border-radius:
+        10px;
+}
+
+#cartItems::-webkit-scrollbar-thumb:hover {
+
+    background:
+        #8d99a6;
+}
+
+
+/* =====================================================
+   30. SELECTION
+===================================================== */
+
+::selection {
+
+    background:
+        var(--primary-color);
+
+    color:
+        #ffffff;
+}
+
+
+/* =====================================================
+   END - HuyMobilePhone STYLE.CSS
+===================================================== */
